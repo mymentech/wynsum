@@ -102,7 +102,7 @@ foreach ($_g_ids as $_gid) {
 
 
     global $__WooCommerce_products;
-    $__WooCommerce_products[] = $__contents;
+    $__WooCommerce_products[$pid][] = $__contents;
 
 }
 

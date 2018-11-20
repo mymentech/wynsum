@@ -117,7 +117,7 @@ if(is_shop() || is_product_category() ){
     $__contents = ob_get_contents();
     ob_end_clean();
     global $__WooCommerce_products;
-    $__WooCommerce_products[] = $__contents;
+    $__WooCommerce_products[$pid][] = $__contents;
 }
 
 
