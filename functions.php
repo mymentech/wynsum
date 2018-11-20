@@ -386,7 +386,7 @@ $__WooCommerce_products = array();
 
 
 
-function mt_randomize_products(&$data){
+function mt_randomize_products($data){
 
     $data = array_values($data);
     array_multisort($data,SORT_DESC);
@@ -397,15 +397,14 @@ function mt_randomize_products(&$data){
         $result = array_merge($result, array_column($data, $i));
     }
 
-    return $data;
+    return $result;
 }
 
 
 function function_mymentech_display_stored_product() {
     global $__WooCommerce_products;
     $products = $__WooCommerce_products;
-
-    mt_randomize_products($products);
+    $products = mt_randomize_products($products);
 
     //shuffle($products);
 
