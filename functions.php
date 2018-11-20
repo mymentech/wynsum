@@ -413,6 +413,21 @@ function function_mymentech_display_stored_product() {
 
 }
 
+
+function mt_randomize_products($data){
+
+    $data = array_values($data);
+    array_multisort($data,SORT_DESC);
+
+    $length = count($data[0]);
+    $result = array();
+    for ($i = 0; $i < $length; $i++) {
+        $result = array_merge($result, array_column($data, $i));
+    }
+
+    return $data;
+}
+
 add_action('mymentech_display_stored_product', 'function_mymentech_display_stored_product', 10);
 
 /** Customization by Mozammel Ended*/
